@@ -1,0 +1,87 @@
+:root{
+    --clr-primary-300:#f3eed9;
+    --clr-primary-400:#824936;
+    --clr-neutral-900:#22222a;
+    --ff-primary:'Pattaya', sans-serif;
+    --ff-asccent:'Playfair Display',serif;
+   
+    /*number in decendig order
+    https://www.youtube.com/watch?v=U9VF-4euyRo
+    https://www.youtube.com/watch?v=bn-DQCifeQQ&t=403s
+    ff=font family
+    line-height: 1.6;==space in two line[up-down]
+      width:min(90%,70.5rem) ;//max value k liye max aur small k liye small consider karte hai ye{width:70% and min-width: 70.5rem;} beyond limit vo lock hoti hai
+     
+      .split>*{
+        flex-basis: 100%;
+    }===>equal row mai divise krta hai inside flex nhi use kiya toh equally divide nho hota
+      */
+
+}
+img{
+    width:min(90%,70.5rem) ;
+    display:block;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+   font-family:var(--ff-primary); 
+   font-weight: 300;
+
+   font-size: 1.31rem;
+   line-height: 1.6;
+}
+.bg-light{
+background-color: var(--clr-primary-300);
+}
+.bg-dark{
+    color: var(--clr-primary-300);
+background-color: var(--clr-neutral-900);
+}
+.bg-primary{
+background-color: var(--clr-primary-400);
+}
+.bg-primary h1{
+    color:var(--clr-primary-300);
+    }
+
+    header,section{
+        padding: 3rem 3rem 3rem 3rem;
+    }
+.conatainer{
+    /* left and right */
+    margin-inline:auto;
+    width:min(90%,70.5rem) ;
+}
+.text-center{
+    text-align: center;
+}
+
+
+.split{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media(max-width:40em) {
+    .split{
+        
+        display: flex;
+        flex-direction: row;
+    }
+    .split>*{
+        /* equal column */
+        flex-basis: 100%;
+        
+    }
+    .split>*+*{
+        margin-left: 2em;
+       /*
+       margine aagai img aur para k bech mai
+        any sibling that has a sibling before it;  */
+       
+    }
+}
